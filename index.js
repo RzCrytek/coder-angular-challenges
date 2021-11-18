@@ -10,6 +10,9 @@ var Product = /** @class */ (function () {
     Product.prototype.registerProduct = function () {
         products.push({ name: this.name, brand: this.brand, price: this.price, quantity: this.quantity, stock: this.stock });
     };
+    Product.listProductByStock = function (stock) {
+        return products.filter(function (product) { return product.stock === stock; });
+    };
     return Product;
 }());
 var product1 = new Product('Producto1', 'demo', 10, 5, true);
@@ -21,3 +24,4 @@ product2.registerProduct();
 product3.registerProduct();
 product4.registerProduct();
 console.log('Productos registrados:', products);
+console.log('Los Productos con stock son:', Product.listProductByStock(true));

@@ -13,6 +13,10 @@ class Product {
   registerProduct(): void {
     products.push({ name: this.name, brand: this.brand, price: this.price, quantity: this.quantity, stock: this.stock });
   }
+
+  static listProductByStock(stock: boolean): IProduct[] {
+    return products.filter((product) => product.stock === stock);
+  }
 }
 
 const product1 = new Product('Producto1', 'demo', 10, 5, true);
@@ -26,3 +30,4 @@ product3.registerProduct();
 product4.registerProduct();
 
 console.log('Productos registrados:', products);
+console.log('Los Productos con stock son:', Product.listProductByStock(true));
