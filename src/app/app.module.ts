@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { CardComponent } from './components/card/card.component';
+import { ChallengeThreeComponent } from './components/challenge-three/challenge-three.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,11 @@ import { CardComponent } from './components/card/card.component';
     FooterComponent,
     HomeComponent,
     BlogComponent,
-    CardComponent
+    CardComponent,
+    ChallengeThreeComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
